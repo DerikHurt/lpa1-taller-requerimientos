@@ -1,0 +1,96 @@
++---------------------+
+|       Hotel         |
++---------------------+
+| -id: int            |
+| -nombre: string     |
+| -ubicacion: string  |
+| -servicios: string[]|
++---------------------+
+| +actualizarInfo()   |
+| +listarHabitaciones()|
++---------------------+
+         |
+         | 1
+         |------< contiene >------* 
+         |                         |
++---------------------+    +---------------------+
+|    Habitacion       |    |  Administrador      |
++---------------------+    +---------------------+
+| -id: int            |    | -id: int            |
+| -tipo: string       |    | -nombre: string     |
+| -precio: float      |    | -correo: string     |
+| -disponible: bool   |    +---------------------+
++---------------------+    | +gestionarHotel()   |
+| +actualizarPrecio() |    | +gestionarHabitacion()|
+| +verDisponibilidad()|    +---------------------+
++---------------------+
+
++----------------------+
+|      Usuario         |
++----------------------+
+| -id: int             |
+| -nombre: string      |
+| -email: string       |
+| -contrasena: string  |
++----------------------+
+| +registrarse()       |
+| +autenticarse()      |
+| +editarPerfil()      |
++----------------------+
+         ^
+         |
+         | hereda
+         |
++----------------------+
+|     Cliente          |
++----------------------+
+| -historial: Reserva[]|
++----------------------+
+| +buscarHabitacion()  |
+| +hacerReserva()      |
+| +comentarHotel()     |
++----------------------+
+
++----------------------+
+|      Reserva         |
++----------------------+
+| -id: int             |
+| -fechaInicio: Date   |
+| -fechaFin: Date      |
+| -estado: string      |
+| -total: float        |
++----------------------+
+| +cancelar()          |
+| +verDetalle()        |
++----------------------+
+         |
+         | *                     * 
+         |----------------------|
+         | pertenece a cliente  |
+         | corresponde a hab    |
+
++----------------------+
+|     Comentario       |
++----------------------+
+| -id: int             |
+| -texto: string       |
+| -puntuacion: int     |
+| -fecha: Date         |
++----------------------+
+| +mostrarComentario() |
++----------------------+
+         |
+         | 1
+         |---------------> Hotel
+         |
+         * (muchos comentarios por hotel)
+
++----------------------+
+|   PasarelaPago       |
++----------------------+
+| -id: int             |
+| -nombre: string      |
+| -url: string         |
++----------------------+
+| +procesarPago()      |
++----------------------+

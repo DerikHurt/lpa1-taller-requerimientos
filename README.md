@@ -5,7 +5,7 @@
 
 - ver [badgen](https://badgen.net/) o [shields](https://shields.io/) para otros tipos de _badges_
 
-## Autor
+## Derik Hurtado
 
 - [@estudiante](https://www.github.com/estudiante)
 
